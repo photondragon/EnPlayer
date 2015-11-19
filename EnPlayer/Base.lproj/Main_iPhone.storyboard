@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="K9a-Or-Y21">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--Sound List Controller - Root View Controller-->
+        <scene sceneID="uBt-Uo-OfF">
+            <objects>
+                <tableViewController id="E1o-cw-mf3" customClass="SoundListController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LZD-ms-J6d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="7Jc-Nw-onV">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Jc-Nw-onV" id="U2E-8j-YEd">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Ve5-xb-jY9"/>
+                    <connections>
+                        <segue destination="ZiZ-vU-Ih2" kind="push" identifier="toPlay" id="bTU-j8-b1D"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WaA-qF-z6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-48" y="95"/>
+        </scene>
+        <!--Play Controller-->
+        <scene sceneID="o30-PU-lsH">
+            <objects>
+                <viewController id="ZiZ-vU-Ih2" customClass="PlayController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BSF-5H-3G6"/>
+                        <viewControllerLayoutGuide type="bottom" id="YMG-nB-9LN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a49-Tu-VRW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-3i-uQo">
+                                <rect key="frame" x="20" y="498" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="上一首"/>
+                                <connections>
+                                    <action selector="onBtnPrevClicked:" destination="ZiZ-vU-Ih2" eventType="touchUpInside" id="6hP-zu-oVS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncX-To-Xpi">
+                                <rect key="frame" x="76" y="498" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="后退5秒"/>
+                                <connections>
+                                    <action selector="onBtnBackwardClicked:" destination="ZiZ-vU-Ih2" eventType="touchUpInside" id="8sV-fi-yPb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjS-hB-l9i">
+                                <rect key="frame" x="188" y="498" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="前进5秒"/>
+                                <connections>
+                                    <action selector="onBtnForwardClicked:" destination="ZiZ-vU-Ih2" eventType="touchUpInside" id="JFK-HN-P3V"/>
+                                </connections>
+                            </button>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="83M-JN-4yZ">
+                                <rect key="frame" x="20" y="461" width="280" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KV4-8H-8gW">
+                                <rect key="frame" x="18" y="104" width="284" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onSliderPositionChanged:" destination="ZiZ-vU-Ih2" eventType="valueChanged" id="Y4F-MV-P8G"/>
+                                    <action selector="onSliderTouchDown:" destination="ZiZ-vU-Ih2" eventType="touchDown" id="SaU-5j-Vfn"/>
+                                    <action selector="onSliderTouchUpInside:" destination="ZiZ-vU-Ih2" eventType="touchUpInside" id="ZLE-vq-7iy"/>
+                                    <action selector="onSliderTouchUpOutside:" destination="ZiZ-vU-Ih2" eventType="touchUpOutside" id="QdB-kQ-aHM"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dng-Jj-DE9">
+                                <rect key="frame" x="241" y="132" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ze6-CF-NNR">
+                                <rect key="frame" x="126" y="132" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOO-1a-RXt">
+                                <rect key="frame" x="126" y="89" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62u-ne-rIE">
+                                <rect key="frame" x="244" y="498" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="下一首"/>
+                                <connections>
+                                    <action selector="onBtnNextClicked:" destination="ZiZ-vU-Ih2" eventType="touchUpInside" id="T6Q-A5-ahg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64w-EY-SoL">
+                                <rect key="frame" x="132" y="498" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="播放"/>
+                                <connections>
+                                    <action selector="onBtnPlayPauseClicked:" destination="ZiZ-vU-Ih2" eventType="touchUpInside" id="wdj-jV-7Rl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YMG-nB-9LN" firstAttribute="top" secondItem="Y1R-3i-uQo" secondAttribute="bottom" constant="40" id="HcM-bT-cPF"/>
+                            <constraint firstItem="YMG-nB-9LN" firstAttribute="top" secondItem="64w-EY-SoL" secondAttribute="bottom" constant="40" id="IFK-jC-7kf"/>
+                            <constraint firstItem="YMG-nB-9LN" firstAttribute="top" secondItem="wjS-hB-l9i" secondAttribute="bottom" constant="40" id="V7e-Lj-vxJ"/>
+                            <constraint firstItem="YMG-nB-9LN" firstAttribute="top" secondItem="ncX-To-Xpi" secondAttribute="bottom" constant="40" id="Xig-OY-ZD1"/>
+                            <constraint firstItem="YMG-nB-9LN" firstAttribute="top" secondItem="62u-ne-rIE" secondAttribute="bottom" constant="40" id="b75-rp-NTa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F17-Z3-Rlb"/>
+                    <connections>
+                        <outlet property="btnPlayPause" destination="64w-EY-SoL" id="Fsl-mU-244"/>
+                        <outlet property="labelCurrentTime" destination="ze6-CF-NNR" id="9jN-PA-tAD"/>
+                        <outlet property="labelSliderTime" destination="LOO-1a-RXt" id="glF-WO-dSC"/>
+                        <outlet property="labelTotalTime" destination="Dng-Jj-DE9" id="eBJ-gp-vJw"/>
+                        <outlet property="progressBar" destination="83M-JN-4yZ" id="nlg-9Y-mpI"/>
+                        <outlet property="sliderBar" destination="KV4-8H-8gW" id="zIY-07-CGT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIm-lU-nfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="413" y="95"/>
+        </scene>
+        <!--Main Navi Controller-->
+        <scene sceneID="324-V7-hFS">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="K9a-Or-Y21" customClass="MainNaviController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCC-R6-z7t">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E1o-cw-mf3" kind="relationship" relationship="rootViewController" id="fqT-bl-zqn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Z5-a7-8tQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-582" y="95"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
